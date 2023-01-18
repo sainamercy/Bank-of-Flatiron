@@ -6,7 +6,7 @@ import Search from './Search';
 function App() {
 const [allTransactions, setAllTransactions] = useState([])
 const [transactions, setTransactions] = useState([]);
-const [formData, setFormData] = useState({id:new Date().getSeconds(), date: "", description: "", category: "", amount: ""})
+const [formData, setFormData] = useState({date: "", description: "", category: "", amount: ""})
 
 useEffect(() => {
   fetch("https://api.jsonbin.io/v3/b/63c54c2315ab31599e37f5f3")
@@ -27,13 +27,15 @@ function handleChange(e){
       [e.target.name]: e.target.value
     })
 }
-function handleSubmit(e){
-  e.preventDefault()
-   setTransactions([
+function handleSubmit(transactionType){
+  if(transactionType==="Withdrawal") {
+    formData.amount = -parseInt(formData.amount)
+  } 
+  setTransactions([
     formData,
     ...transactions
    ])
-   setFormData({date: "", description: "", category: "", amount: ""})
+  setFormData({date: "", description: "", category: "", amount: ""})
 }
 
 
