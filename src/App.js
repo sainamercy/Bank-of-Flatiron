@@ -6,7 +6,7 @@ import Search from './Search';
 function App() {
 const [allTransactions, setAllTransactions] = useState([])
 const [transactions, setTransactions] = useState([]);
-const [formData, setFormData] = useState({date: "", description: "", category: "", amount: ""})
+const [formData, setFormData] = useState({id:"", date: "", description: "", category: "", amount: ""})
 
 useEffect(() => {
   fetch("https://api.jsonbin.io/v3/b/63c54c2315ab31599e37f5f3")
@@ -31,11 +31,12 @@ function handleSubmit(transactionType){
   if(transactionType==="Withdrawal") {
     formData.amount = -parseInt(formData.amount)
   } 
+  formData.id = transactions.length + 1
   setTransactions([
     formData,
     ...transactions
    ])
-  setFormData({date: "", description: "", category: "", amount: ""})
+  setFormData({id:"", date: "", description: "", category: "", amount: ""})
 }
 
 
