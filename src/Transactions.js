@@ -2,9 +2,7 @@ import React from "react";
 import Transaction from "./Transaction";
 import Balance from "./Balance";
 
-function Transactions({transactions}) {
- 
-  
+function Transactions({ transactions }) {
   return (
     <div className="w-3/4 flex flex-col items-center">
       <Balance transactions={transactions} />
