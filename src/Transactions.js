@@ -1,27 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Transaction from "./Transaction";
 import Balance from "./Balance";
 
 function Transactions({transactions}) {
-  
-  const [balance, setBalance] = useState(0);
-//   const [movements, setMovements] = useState([])
-  
-//  function calcBal(){
-//   const initMovements = []
-//   transactions.map(transaction=>initMovements.push(parseInt(transaction.amount)))
-//   setMovements(initMovements)
-//   const updatedBalance = movements.reduce((acc, mov)=> acc+mov, 0)
-//   setBalance(updatedBalance)
-//  }
-    
-  
-  
  
   
   return (
     <div className="w-3/4">
-      <Balance balance={balance} />
+      <Balance transactions={transactions} />
       <table className="border-separate border-slate-400 w-full">
         <thead>
           <tr>

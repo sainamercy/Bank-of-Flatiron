@@ -6,8 +6,6 @@ function NewTransaction({formData, onValueChange, onSubmitForm}){
         
         setTransactionType(e.target.value)   
     }
-   
-    console.log(formData);
     return <form onSubmit={onSubmitForm} className="bg-yellow-400 p-4 rounded-lg mb-2">
             <select onChange={handleOption} value={transactionType} className="p-2 mr-2 rounded-lg">
                 <option>Select Transaction Type</option>
