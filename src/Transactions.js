@@ -6,7 +6,7 @@ function Transactions({transactions}) {
  
   
   return (
-    <div className="w-3/4">
+    <div className="w-3/4 flex flex-col items-center">
       <Balance transactions={transactions} />
       <table className="border-separate border-slate-400 w-full">
         <thead>

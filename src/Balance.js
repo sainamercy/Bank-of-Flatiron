@@ -5,7 +5,7 @@ function Balance({ transactions }) {
   transactions.map((transaction) => movs.push(parseInt(transaction.amount)));
   const balance = movs.reduce((acc, mov) => acc + mov, 0);
   return (
-    <div className="flex justify-between mb-4 text-3xl">
+    <div className="flex justify-between w-11/12 mb-4 text-3xl">
       <h4>Current Balance</h4>
       <p>Ksh. {balance}</p>
     </div>

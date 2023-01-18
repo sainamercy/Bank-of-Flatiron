@@ -19,7 +19,7 @@ function NewTransaction({formData, onValueChange, onSubmitForm}){
             <input className="p-2 mr-2 rounded-lg" onChange={onValueChange} type="text" name="category" placeholder="enter category" value={formData.category}></input>
             <input className="p-2 mr-2 rounded-lg" onChange={onValueChange}  type="date" name="date" value={formData.date}></input>
             <input className="p-2 mr-2 rounded-lg" onChange={onValueChange}  type="text" name="description" placeholder="enter description" value={formData.description}></input>
-            <input className="p-2 mr-2 rounded-lg" onChange={onValueChange} type="number" name="amount" value={formData.amount}></input>
+           <label><span className="text-zinc-500">Enter Amount:</span><input className="p-2 mr-2 rounded-lg" onChange={onValueChange} type="number" name="amount" value={formData.amount}></input></label>
             <button className="p-2 mr-2 bg-red-200 rounded-lg" type="submit">Add new transaction</button>
     </form>
 }
